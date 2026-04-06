@@ -86,33 +86,34 @@ pipeline {
               }
                 
             }
-            stage('parallel stage') {
-                parallel {
-                    stage('parallel stage 1') {
-                        steps {
-                            script{
-                                sh """
-                                echo "hello, this is parallel stage 1"
-                              
-                                """
-                              } 
-                        }
+        }
+
+
+     stage('parallel stage') {
+        parallel {
+            stage('parallel stage 1') {
+                steps {
+                    script{
+                        sh """
+                        echo "hello, this is parallel stage 1"
+                        """
                     }
-                    stage('parallel stage 2') {
-                        steps {
-                            script{
-                                sh """
-                                echo "hello, this is parallel stage 2"
-                              
-                                """
-                              } 
-                        }
+                }
+            }
+            stage('parallel stage 2') {
+                steps {
+                    script{
+                        sh """
+                        echo "hello, this is parallel stage 2"
+                        """
                     }
                 }
             }
         }
-        
     }
+
+
+
     post {
         always {
             echo "This will always run"
