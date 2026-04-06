@@ -74,7 +74,8 @@ pipeline {
           //       }
           //}
           when {
-              environment name: 'Deployment_Env', value: 'production'
+              // environment name: 'Deployment_Env', value: 'production'
+              environment name: 'Deployment_Env', value: 'qa'
               }
             steps {
                  script{
