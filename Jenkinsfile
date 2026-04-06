@@ -27,7 +27,7 @@ pipeline {
                  script{
                 sh """
                 echo "hello, this is deployment"
-                aaa
+              
                 """
               }
                 //
