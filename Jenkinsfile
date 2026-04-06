@@ -5,9 +5,14 @@ pipeline {
         // For example: MY_VAR = "value"
         project_name = "Expense Tracker"
         component = "Backend"
-
-
     }
+    options {
+        // Define pipeline options here
+        // For example: timeout(time: 1, unit: 'HOURS')
+
+        disableConcurrentBuilds() // Prevent concurrent builds of this pipeline
+    }
+
     stages {
         stage('Build') {
             steps {
