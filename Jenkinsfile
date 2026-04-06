@@ -1,11 +1,22 @@
 pipeline {
     agent {label 'AGENT-1'}
+    environment {
+        // Define environment variables here
+        // For example: MY_VAR = "value"
+        project_name = "Expense Tracker"
+        component = "Backend"
+
+
+    }
     stages {
         stage('Build') {
             steps {
               script{
                 sh """
+
                 echo "hello, this is build"
+                echo "project_name: ${project_name}"
+                echo "component: ${component}"
                 
                 """
               }  //
