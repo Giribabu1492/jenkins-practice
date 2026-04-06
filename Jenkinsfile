@@ -36,9 +36,7 @@ pipeline {
                 echo "hello, this is build"
                 echo "project_name: ${project_name}"
                 echo "component: ${component}"
-                //sleep 15
-
-
+          
                 echo "Hello ${params.PERSON}"
 
                 echo "Biography: ${params.BIOGRAPHY}"
