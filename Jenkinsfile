@@ -84,7 +84,8 @@ pipeline {
               
                 """
               }
-
+                
+            }
             stage('parallel stage') {
                 parallel {
                     stage('parallel stage 1') {
@@ -92,7 +93,6 @@ pipeline {
                             script{
                                 sh """
                                 echo "hello, this is parallel stage 1"
-                                sleep 10
                               
                                 """
                               } 
@@ -103,7 +103,6 @@ pipeline {
                             script{
                                 sh """
                                 echo "hello, this is parallel stage 2"
-                                sleep 10
                               
                                 """
                               } 
@@ -114,8 +113,6 @@ pipeline {
         }
         
     }
-    
-  }
     post {
         always {
             echo "This will always run"
