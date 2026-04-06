@@ -120,6 +120,7 @@ pipeline {
     post {
         always {
             echo "This will always run"
+            deleteDir() // Clean up the workspace after the build
         }
         success {
             echo "This will run only if successful"
