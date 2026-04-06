@@ -84,8 +84,6 @@ pipeline {
               
                 """
               }
-                
-            }
 
             stage('parallel stage') {
                 parallel {
@@ -116,6 +114,8 @@ pipeline {
         }
         
     }
+    
+  }
     post {
         always {
             echo "This will always run"
