@@ -11,6 +11,7 @@ pipeline {
         // For example: timeout(time: 1, unit: 'HOURS')
 
         disableConcurrentBuilds() // Prevent concurrent builds of this pipeline
+        timeout(time: 5, unit: 'seconds') // Set a timeout for the entire pipeline
     }
 
     stages {
