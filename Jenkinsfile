@@ -5,6 +5,7 @@ pipeline {
         // For example: MY_VAR = "value"
         project_name = "Expense Tracker"
         component = "Backend"
+        Deployment_Env = "qa"
     }
     options {
         // Define pipeline options here
@@ -73,7 +74,7 @@ pipeline {
           //       }
           //}
           when {
-              branch 'main'
+              environment name: 'Deployment_Env', value: 'production'
               }
             steps {
                  script{
