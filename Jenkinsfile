@@ -4,7 +4,7 @@ pipeline {
         // Define environment variables here
         // For example: MY_VAR = "value"
         project_name = "Expense Tracker"
-        component = "Backend"
+        component = "Backend to frontend"
     }
     options {
         // Define pipeline options here
