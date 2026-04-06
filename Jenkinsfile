@@ -4,7 +4,7 @@ pipeline {
         // Define environment variables here
         // For example: MY_VAR = "value"
         project_name = "Expense Tracker"
-        component = "Backend to frontend"
+        component = "Backend"
     }
     options {
         // Define pipeline options here
@@ -27,6 +27,8 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
         
         }
+
+    
     stages {
         stage('Build') {
             steps {
@@ -62,6 +64,14 @@ pipeline {
             }
         }
         stage('Deploy') {
+          input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
             steps {
                  script{
                 sh """
