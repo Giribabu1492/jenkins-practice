@@ -86,6 +86,33 @@ pipeline {
               }
                 
             }
+
+            stage('parallel stage') {
+                parallel {
+                    stage('parallel stage 1') {
+                        steps {
+                            script{
+                                sh """
+                                echo "hello, this is parallel stage 1"
+                                sleep 10
+                              
+                                """
+                              } 
+                        }
+                    }
+                    stage('parallel stage 2') {
+                        steps {
+                            script{
+                                sh """
+                                echo "hello, this is parallel stage 2"
+                                sleep 10
+                              
+                                """
+                              } 
+                        }
+                    }
+                }
+            }
         }
         
     }
