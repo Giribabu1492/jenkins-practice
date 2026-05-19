@@ -20,6 +20,7 @@ pipeline {
                         echo "Hello world"
                         echo "project name is $PROJECT"
                         echo "component name is $COMPONENT"
+                        sleep 15
                     '''
                 }
             }
