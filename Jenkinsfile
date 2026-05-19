@@ -55,7 +55,7 @@ pipeline {
             // }
             when {
 
-                environment name: 'DEPLOY_ENV', value: 'DEV'
+                environment name: 'DEPLOY_ENV', value: 'QA'
             }
             steps {
                 sh '''
