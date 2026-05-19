@@ -39,6 +39,14 @@ pipeline {
         }
 
         stage('Deploy') {
+
+            input {
+                message "Do you want to proceed with deployment?"
+                ok "Deploy"
+                parameters {
+                    string(name: 'DEPLOY_ENV', defaultValue: 'dev', description: 'Environment to deploy to')
+                }
+            }
             steps {
                 sh '''
                     echo "hello this is deploy successfully"
