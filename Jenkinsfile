@@ -52,6 +52,10 @@ pipeline {
             //         string(name: 'DEPLOY_ENV', defaultValue: 'dev', description: 'Environment to deploy to')
             //     }
             // }
+            when {
+
+                branch 'main'
+            }
             steps {
                 sh '''
                     echo "hello this is deploy to successfully"
