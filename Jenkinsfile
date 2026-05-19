@@ -14,6 +14,7 @@ pipeline {
     parameters {
         string(name: 'PERSON', defaultValue: 'EXPENSE', description: 'Project name')
         string(name: 'BIOGRAPHY', defaultValue: 'BACKEND', description: 'Component name')
+        string(name: 'mobile', defaultValue: 'BACKEND', description: 'Component name')
     }
 
     stages {
