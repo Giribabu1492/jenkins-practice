@@ -1,13 +1,22 @@
 pipeline {
     agent { label 'AGENT-1' }
+
     environment {
     PROJECT = "EXPENSE"
     COMPONENT= "BACKEND"
     }
+
     options {
         disableConcurrentBuilds()
-        timeout(time: 5, unit: 'SECONDS')
+        timeout(time: 30, unit: 'MINUTES')
     }
+
+    parameters {
+        string(name: 'PROJECT', defaultValue: 'EXPENSE', description: 'Project name')
+        string(name: 'COMPONENT', defaultValue: 'BACKEND', description: 'Component name')
+    }
+
+
 
 
 
@@ -21,7 +30,10 @@ pipeline {
                         echo "Hello world"
                         echo "project name is $PROJECT"
                         echo "component name is $COMPONENT"
-                        sleep 15
+                        echo "This is Project related information: ${params.PROJECT}"
+                         echo "This is Component related information: ${params.COMPONENT}"
+
+                        
                     '''
                 }
             }
