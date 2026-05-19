@@ -4,6 +4,7 @@ pipeline {
     environment {
         PROJECT = "EXPENSE"
         COMPONENT = "BACKEND"
+        DEPLOY_ENV = "QA"
     }
 
     options {
@@ -54,11 +55,12 @@ pipeline {
             // }
             when {
 
-                branch 'main'
+                environment name: 'DEPLOY_ENV', value: 'DEV'
             }
             steps {
                 sh '''
                     echo "hello this is deploy to successfully"
+                    echo "Deploying to environment: $DEPLOY_ENV"
                 '''
             }
         }
