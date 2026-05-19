@@ -2,8 +2,8 @@ pipeline {
     agent { label 'AGENT-1' }
 
     environment {
-    PROJECT = "EXPENSE"
-    COMPONENT= "BACKEND"
+        PROJECT = "EXPENSE"
+        COMPONENT = "BACKEND"
     }
 
     options {
@@ -16,47 +16,32 @@ pipeline {
         string(name: 'BIOGRAPHY', defaultValue: 'BACKEND', description: 'Component name')
     }
 
-
-
-
-
-
-
     stages {
         stage('Build') {
             steps {
-                script {
-                    sh '''
-                        echo "Hello world"
-                        echo "project name is $PROJECT"
-                        echo "component name is $COMPONENT"
-                        
-
-                        
-                    '''
-                }
+                sh '''
+                    echo "Hello world"
+                    echo "project name is $PROJECT"
+                    echo "component name is $COMPONENT"
+                '''
             }
         }
 
         stage('Test') {
             steps {
-                script {
-                    sh '''
-                        echo "hello this is test"
-                        echo "This is Project related information: ${params.PERSON}"
-                        echo "This is Component related information: ${params.BIOGRAPHY}"
-                    '''
-                }
+                sh """
+                    echo "hello this is test"
+                    echo "This is Project related information: ${params.PERSON}"
+                    echo "This is Component related information: ${params.BIOGRAPHY}"
+                """
             }
         }
 
         stage('Deploy') {
             steps {
-                script {
-                    sh '''
-                        echo "hello this is deploy"
-                    '''
-                }
+                sh '''
+                    echo "hello this is deploy"
+                '''
             }
         }
     }
