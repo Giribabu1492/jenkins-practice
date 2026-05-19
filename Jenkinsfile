@@ -28,10 +28,11 @@ pipeline {
                 script {
                     sh '''
                         echo "Hello world"
-                        echo "project name is $PROJECT"
-                        echo "component name is $COMPONENT"
+                        
                         echo "This is Project related information: ${params.PROJECT}"
-                         echo "This is Component related information: ${params.COMPONENT}"
+                        echo "This is Component related information: ${params.COMPONENT}"
+                        
+
 
                         
                     '''
