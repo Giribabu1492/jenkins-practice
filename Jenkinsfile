@@ -12,8 +12,8 @@ pipeline {
     }
 
     parameters {
-        string(name: 'PROJECT', defaultValue: 'EXPENSE', description: 'Project name')
-        string(name: 'COMPONENT', defaultValue: 'BACKEND', description: 'Component name')
+        string(name: 'PERSON', defaultValue: 'EXPENSE', description: 'Project name')
+        string(name: 'BIOGRAPHY', defaultValue: 'BACKEND', description: 'Component name')
     }
 
 
@@ -43,8 +43,8 @@ pipeline {
                 script {
                     sh '''
                         echo "hello this is test"
-                        echo "This is Project related information: ${params.PROJECT}"
-                        echo "This is Component related information: ${params.COMPONENT}"
+                        echo "This is Project related information: ${params.PERSON}"
+                        echo "This is Component related information: ${params.BIOGRAPHY}"
                     '''
                 }
             }
