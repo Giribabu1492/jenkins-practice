@@ -1,8 +1,7 @@
 pipeline {
-    agent {label 'AGENT-1'}
+    agent { label 'AGENT-1' }
 
     stages {
-
         stage('Build') {
             steps {
                 script {
@@ -23,28 +22,25 @@ pipeline {
             }
         }
 
-        stage('Parallel Stage') {
-            parallel {
-                stage('Parallel Stage - 1') {
-                    steps {
-                        script {
-                            sh '''
-                                echo "this is parallel stage1"
-                            '''
-                        }
-                    }
-                }
-
-                stage('Parallel Stage - 2') {
-                    steps {
-                        script {
-                            sh '''
-                                echo "this is parallel stage2"
-                            '''
-                        }
-                    }
+        stage('Deploy') {
+            steps {
+                script {
+                    sh '''
+                        echo "hello this is deploy"
+                    '''
                 }
             }
         }
     }
-}
+
+    post {
+        always {
+            echo "This will always run"
+        }
+        failure {
+            echo "This will run only if the pipeline fails"
+        }
+        success {
+            echo "Pipeline completed successfully!"
+        }
+    }
