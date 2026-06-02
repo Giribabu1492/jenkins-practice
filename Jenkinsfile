@@ -26,11 +26,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                script {
+                    echo "This is the build stage"
+                
                 sh '''
                     echo "Hello world"
                     echo "project name is $PROJECT"
                     echo "component name is $COMPONENT"
                 '''
+                }
             }
         }
 
