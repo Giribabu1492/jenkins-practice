@@ -67,26 +67,26 @@ pipeline {
 
         }
 
-        stage('parallel stage') {
-            parallel {
-                stage('parallel stage 1') {
-                    steps {
-                        sh '''
-                            echo "This is parallel stage 1"
-                        '''
-                    }
-                }
-                stage('parallel stage 2') {
-                    steps {
-                        sh '''
-                            echo "This is parallel stage 2"
-                        '''
-                    }
-                }
-            }
+        // stage('parallel stage') {
+        //     parallel {
+        //         stage('parallel stage 1') {
+        //             steps {
+        //                 sh '''
+        //                     echo "This is parallel stage 1"
+        //                 '''
+        //             }
+        //         }
+        //         stage('parallel stage 2') {
+        //             steps {
+        //                 sh '''
+        //                     echo "This is parallel stage 2"
+        //                 '''
+        //             }
+        //         }
+        //     }
 
 
-        }
+        // }
 
 
     }
