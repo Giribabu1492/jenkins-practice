@@ -2,7 +2,7 @@ pipeline {
     agent { label 'AGENT-1' }
 
     environment {
-        PROJECT = "EXPENSE"
+        PROJECT = "ROBOTIC PROCESS AUTOMATION"
         COMPONENT = "BACKEND"
         DEPLOY_ENV = "QA"
     }
@@ -40,11 +40,17 @@ pipeline {
 
         stage('Test') {
             steps {
+
+                script {
+                    echo "This is the test stage"
+                
                 sh """
                     echo "hello this is test"
                     echo "This is Project related information: ${params.PERSON}"
                     echo "This is Component related information: ${params.BIOGRAPHY}"
                 """
+                }
+
             }
         }
 
