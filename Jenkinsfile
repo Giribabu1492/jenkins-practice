@@ -48,6 +48,7 @@ pipeline {
                     echo "hello this is test"
                     echo "This is Project related information: ${params.PERSON}"
                     echo "This is Component related information: ${params.BIOGRAPHY}"
+                    echo "This is Mobile related information: ${params.mobile}"
                 """
                 }
 
@@ -56,13 +57,13 @@ pipeline {
 
         stage('Deploy') {
 
-            // input {
-            //     message "Do you want to proceed with deployment?"
-            //     ok "Deploy"
-            //     parameters {
-            //         string(name: 'DEPLOY_ENV', defaultValue: 'dev', description: 'Environment to deploy to')
-            //     }
-            // }
+            input {
+                message "Do you want to proceed with deployment?"
+                ok "Deploy"
+                parameters {
+                    string(name: 'DEPLOY_ENV', defaultValue: 'dev', description: 'Environment to deploy to')
+                }
+            }
             when {
 
                 environment name: 'DEPLOY_ENV', value: 'QA'
